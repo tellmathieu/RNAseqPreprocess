@@ -4,6 +4,9 @@ from math import ceil
 from optparse import OptionParser
 from operator import itemgetter
 
+# Script retrieved from https://ccb.jhu.edu/software/stringtie/dl/prepDE.py3
+# Only minor changes made
+
 parser=OptionParser(description='Generates two CSV files containing the count matrices for genes and transcripts, using the coverage values found in the output of `stringtie -e`')
 parser.add_option('-i', '--input', '--in', default='.', help="a folder containing all sample sub-directories, or a text file with sample ID and path to its GTF file on each line [default: %default/]")
 parser.add_option('-g', default='gene_count_matrix.csv', help="where to output the gene count matrix [default: %default")
