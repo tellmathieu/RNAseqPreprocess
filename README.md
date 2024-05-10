@@ -1,5 +1,6 @@
 # RNAseqAnalysis
 RNAseq Analysis Pipeline
+
 (Adapted from Patricia Baldrich's pipeline)
 
 ## 1. Clone this repository to your working space
