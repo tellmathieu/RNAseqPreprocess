@@ -7,4 +7,6 @@ input
 summaryResults
 test.py
 *.csv
+diffVer
+updatedVer
 

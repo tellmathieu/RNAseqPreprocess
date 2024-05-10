@@ -153,7 +153,7 @@ for s in samples:
             if is_transcript(v):
                 t_id=RE_TRANSCRIPT_ID.search(v[8]).group(1)
                 try:
-                  g_id=t_id.split('.')[0] #getGeneID(v[8], v[0], t_id)
+                  g_id=getGeneID(v[8], v[0], t_id)
                 except:
                   print("Problem parsing file %s at line:\n:%s\n" % (s[1], v))
                   sys.exit(1)

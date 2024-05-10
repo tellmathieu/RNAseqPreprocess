@@ -17,7 +17,7 @@ bash Miniforge3-$(uname)-$(uname -m).sh
 - b) Initialize mamba and set up an environment - this can take 5-10 minutes
 ```
 source ~/.bashrc #or you can log out and then log back in
-mamba create -c conda-forge -c bioconda -y -n RNAseq snakemake hisat2 samtools stringtie bioconductor-deseq2 bioconductor-edger
+mamba create -c conda-forge -c bioconda -y -n RNAseq snakemake hisat2=2.2.1 samtools stringtie=2.2.3 bioconductor-deseq2 bioconductor-edger
 mamba activate RNAseq
 ```
 

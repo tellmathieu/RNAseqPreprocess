@@ -5,9 +5,9 @@ import os, sys, glob
 ##### --- Full filepath starting with "/"" --- ####
 ### --- No slashes at the end of a filepath --- ###
 
-fastqDirectory="/home/tmathieu/RNAseq_analysis_pipeline/fastq"
-genome="/home/tmathieu/RNAseq_analysis_pipeline/input/Ath_genome.fa"
-annotation="/home/tmathieu/RNAseq_analysis_pipeline/input/Ath_genes.gff"
+fastqDirectory="/home/tmathieu/RNAseqAnalysis/fastq"
+genome="/home/tmathieu/RNAseqAnalysis/input/Ath_genome.fa"
+annotation="/home/tmathieu/RNAseqAnalysis/input/Ath_genes.gff"
 threads=20
 
 ###################### --- PIPELINE--- #######################
