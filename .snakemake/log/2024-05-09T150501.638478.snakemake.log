@@ -1,6 +1,0 @@
-Building DAG of jobs...
-MissingInputException in rule indexGenome in file /data/data2/homes/tmathieu/RNAseqAnalysis/analysis_pipeline_RNAseq.smk, line 50:
-Missing input files for rule indexGenome:
-    output: /home/tmathieu/RNAseq_analysis_pipeline/input/Ath_genome.1.ht2, /home/tmathieu/RNAseq_analysis_pipeline/input/Ath_genome.2.ht2, /home/tmathieu/RNAseq_analysis_pipeline/input/Ath_genome.3.ht2, /home/tmathieu/RNAseq_analysis_pipeline/input/Ath_genome.4.ht2, /home/tmathieu/RNAseq_analysis_pipeline/input/Ath_genome.5.ht2, /home/tmathieu/RNAseq_analysis_pipeline/input/Ath_genome.6.ht2, /home/tmathieu/RNAseq_analysis_pipeline/input/Ath_genome.7.ht2, /home/tmathieu/RNAseq_analysis_pipeline/input/Ath_genome.8.ht2
-    affected files:
-        /home/tmathieu/RNAseq_analysis_pipeline/input/Ath_genome.fa
