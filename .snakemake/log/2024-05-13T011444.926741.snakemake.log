@@ -1,0 +1,42 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Job stats:
+job       count
+------  -------
+all           1
+prepDE        1
+total         2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 13 01:14:50 2024]
+localrule prepDE:
+    input: /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_AWF_NT_R4/Col0_AWF_NT_R4_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_AWF_NT_R4/Col0_AWF_NT_R4_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_AWF_NT_R5/Col0_AWF_NT_R5_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_AWF_NT_R5/Col0_AWF_NT_R5_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_AWF_NT_R6/Col0_AWF_NT_R6_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_AWF_NT_R6/Col0_AWF_NT_R6_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_R1/Col0_CL_R1_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_R1/Col0_CL_R1_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_R2/Col0_CL_R2_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_R2/Col0_CL_R2_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_R3/Col0_CL_R3_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_R3/Col0_CL_R3_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_ribo_R1/Col0_CL_ribo_R1_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_ribo_R1/Col0_CL_ribo_R1_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_ribo_R2/Col0_CL_ribo_R2_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_ribo_R2/Col0_CL_ribo_R2_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_ribo_R3/Col0_CL_ribo_R3_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_ribo_R3/Col0_CL_ribo_R3_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_LSW_R1/Col0_LSW_R1_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_LSW_R1/Col0_LSW_R1_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_LSW_R2/Col0_LSW_R2_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_LSW_R2/Col0_LSW_R2_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_LSW_R3/Col0_LSW_R3_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_LSW_R3/Col0_LSW_R3_ST_MERGE.gtf
+    output: /data/data2/homes/tmathieu/RNAseqAnalysis/summaryResults/merged_gene_count.csv, /data/data2/homes/tmathieu/RNAseqAnalysis/summaryResults/merged_transcript_count.csv
+    jobid: 1
+    reason: Missing output files: /data/data2/homes/tmathieu/RNAseqAnalysis/summaryResults/merged_transcript_count.csv, /data/data2/homes/tmathieu/RNAseqAnalysis/summaryResults/merged_gene_count.csv
+    threads: 20
+    resources: tmpdir=/tmp
+
+
+			python3 /data/data2/homes/tmathieu/RNAseqAnalysis/script/prepDE.py3 				-i /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge 				-g /data/data2/homes/tmathieu/RNAseqAnalysis/summaryResults/merged_gene_count.csv 				-t /data/data2/homes/tmathieu/RNAseqAnalysis/summaryResults/merged_transcript_count.csv 				-s AT
+		
+[Mon May 13 01:14:52 2024]
+Error in rule prepDE:
+    jobid: 1
+    input: /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_AWF_NT_R4/Col0_AWF_NT_R4_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_AWF_NT_R4/Col0_AWF_NT_R4_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_AWF_NT_R5/Col0_AWF_NT_R5_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_AWF_NT_R5/Col0_AWF_NT_R5_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_AWF_NT_R6/Col0_AWF_NT_R6_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_AWF_NT_R6/Col0_AWF_NT_R6_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_R1/Col0_CL_R1_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_R1/Col0_CL_R1_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_R2/Col0_CL_R2_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_R2/Col0_CL_R2_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_R3/Col0_CL_R3_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_R3/Col0_CL_R3_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_ribo_R1/Col0_CL_ribo_R1_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_ribo_R1/Col0_CL_ribo_R1_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_ribo_R2/Col0_CL_ribo_R2_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_ribo_R2/Col0_CL_ribo_R2_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_ribo_R3/Col0_CL_ribo_R3_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_ribo_R3/Col0_CL_ribo_R3_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_LSW_R1/Col0_LSW_R1_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_LSW_R1/Col0_LSW_R1_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_LSW_R2/Col0_LSW_R2_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_LSW_R2/Col0_LSW_R2_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_LSW_R3/Col0_LSW_R3_ST_MERGE.gtf, /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_LSW_R3/Col0_LSW_R3_ST_MERGE.gtf
+    output: /data/data2/homes/tmathieu/RNAseqAnalysis/summaryResults/merged_gene_count.csv, /data/data2/homes/tmathieu/RNAseqAnalysis/summaryResults/merged_transcript_count.csv
+    shell:
+        
+			python3 /data/data2/homes/tmathieu/RNAseqAnalysis/script/prepDE.py3 				-i /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge 				-g /data/data2/homes/tmathieu/RNAseqAnalysis/summaryResults/merged_gene_count.csv 				-t /data/data2/homes/tmathieu/RNAseqAnalysis/summaryResults/merged_transcript_count.csv 				-s AT
+		
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-05-13T011444.926741.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -209,3 +209,163 @@ localrule alignFASTQs:
 
 			hisat2 				-q 				--dta 				--no-unal 				-p 20 				--summary-file /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_CL_ribo_R3.summary.txt 				-x /home/tmathieu/RNAseqAnalysis/input/Ath_genome 				-1 /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_ribo_R3_R1.fq 				-2 /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_ribo_R3_R2.fq 				-S /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_CL_ribo_R3.sam
 		
+Terminating processes on user request, this might take some time.
+[Fri May 10 17:25:44 2024]
+[Fri May 10 17:25:44 2024]
+Error in rule alignFASTQs:
+    jobid: 12
+    input: /home/tmathieu/RNAseqAnalysis/input/Ath_genome.1.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.2.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.3.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.4.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.5.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.6.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.7.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.8.ht2, /home/tmathieu/RNAseqAnalysis/fastq/Col0_AWF_NT_R5_R1.fq, /home/tmathieu/RNAseqAnalysis/fastq/Col0_AWF_NT_R5_R2.fq
+    output: /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_AWF_NT_R5.sam
+    shell:
+        
+			mkdir -p /data/data2/homes/tmathieu/RNAseqAnalysis/sam
+
+			hisat2 				-q 				--dta 				--no-unal 				-p 20 				--summary-file /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_AWF_NT_R5.summary.txt 				-x /home/tmathieu/RNAseqAnalysis/input/Ath_genome 				-1 /home/tmathieu/RNAseqAnalysis/fastq/Col0_AWF_NT_R5_R1.fq 				-2 /home/tmathieu/RNAseqAnalysis/fastq/Col0_AWF_NT_R5_R2.fq 				-S /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_AWF_NT_R5.sam
+		
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error in rule alignFASTQs:
+    jobid: 52
+    input: /home/tmathieu/RNAseqAnalysis/input/Ath_genome.1.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.2.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.3.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.4.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.5.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.6.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.7.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.8.ht2, /home/tmathieu/RNAseqAnalysis/fastq/Col0_LSW_R3_R1.fq, /home/tmathieu/RNAseqAnalysis/fastq/Col0_LSW_R3_R2.fq
+    output: /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_LSW_R3.sam
+    shell:
+        
+			mkdir -p /data/data2/homes/tmathieu/RNAseqAnalysis/sam
+
+			hisat2 				-q 				--dta 				--no-unal 				-p 20 				--summary-file /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_LSW_R3.summary.txt 				-x /home/tmathieu/RNAseqAnalysis/input/Ath_genome 				-1 /home/tmathieu/RNAseqAnalysis/fastq/Col0_LSW_R3_R1.fq 				-2 /home/tmathieu/RNAseqAnalysis/fastq/Col0_LSW_R3_R2.fq 				-S /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_LSW_R3.sam
+		
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri May 10 17:25:44 2024]
+Error in rule alignFASTQs:
+    jobid: 16
+    input: /home/tmathieu/RNAseqAnalysis/input/Ath_genome.1.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.2.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.3.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.4.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.5.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.6.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.7.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.8.ht2, /home/tmathieu/RNAseqAnalysis/fastq/Col0_AWF_NT_R6_R1.fq, /home/tmathieu/RNAseqAnalysis/fastq/Col0_AWF_NT_R6_R2.fq
+    output: /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_AWF_NT_R6.sam
+    shell:
+        
+			mkdir -p /data/data2/homes/tmathieu/RNAseqAnalysis/sam
+
+			hisat2 				-q 				--dta 				--no-unal 				-p 20 				--summary-file /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_AWF_NT_R6.summary.txt 				-x /home/tmathieu/RNAseqAnalysis/input/Ath_genome 				-1 /home/tmathieu/RNAseqAnalysis/fastq/Col0_AWF_NT_R6_R1.fq 				-2 /home/tmathieu/RNAseqAnalysis/fastq/Col0_AWF_NT_R6_R2.fq 				-S /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_AWF_NT_R6.sam
+		
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri May 10 17:25:44 2024]
+Error in rule alignFASTQs:
+    jobid: 36
+    input: /home/tmathieu/RNAseqAnalysis/input/Ath_genome.1.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.2.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.3.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.4.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.5.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.6.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.7.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.8.ht2, /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_ribo_R2_R1.fq, /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_ribo_R2_R2.fq
+    output: /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_CL_ribo_R2.sam
+    shell:
+        
+			mkdir -p /data/data2/homes/tmathieu/RNAseqAnalysis/sam
+
+			hisat2 				-q 				--dta 				--no-unal 				-p 20 				--summary-file /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_CL_ribo_R2.summary.txt 				-x /home/tmathieu/RNAseqAnalysis/input/Ath_genome 				-1 /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_ribo_R2_R1.fq 				-2 /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_ribo_R2_R2.fq 				-S /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_CL_ribo_R2.sam
+		
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri May 10 17:25:44 2024]
+[Fri May 10 17:25:44 2024]
+Error in rule alignFASTQs:
+    jobid: 40
+    input: /home/tmathieu/RNAseqAnalysis/input/Ath_genome.1.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.2.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.3.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.4.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.5.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.6.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.7.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.8.ht2, /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_ribo_R3_R1.fq, /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_ribo_R3_R2.fq
+    output: /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_CL_ribo_R3.sam
+    shell:
+        
+			mkdir -p /data/data2/homes/tmathieu/RNAseqAnalysis/sam
+
+			hisat2 				-q 				--dta 				--no-unal 				-p 20 				--summary-file /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_CL_ribo_R3.summary.txt 				-x /home/tmathieu/RNAseqAnalysis/input/Ath_genome 				-1 /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_ribo_R3_R1.fq 				-2 /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_ribo_R3_R2.fq 				-S /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_CL_ribo_R3.sam
+		
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error in rule alignFASTQs:
+    jobid: 48
+    input: /home/tmathieu/RNAseqAnalysis/input/Ath_genome.1.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.2.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.3.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.4.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.5.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.6.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.7.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.8.ht2, /home/tmathieu/RNAseqAnalysis/fastq/Col0_LSW_R2_R1.fq, /home/tmathieu/RNAseqAnalysis/fastq/Col0_LSW_R2_R2.fq
+    output: /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_LSW_R2.sam
+    shell:
+        
+			mkdir -p /data/data2/homes/tmathieu/RNAseqAnalysis/sam
+
+			hisat2 				-q 				--dta 				--no-unal 				-p 20 				--summary-file /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_LSW_R2.summary.txt 				-x /home/tmathieu/RNAseqAnalysis/input/Ath_genome 				-1 /home/tmathieu/RNAseqAnalysis/fastq/Col0_LSW_R2_R1.fq 				-2 /home/tmathieu/RNAseqAnalysis/fastq/Col0_LSW_R2_R2.fq 				-S /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_LSW_R2.sam
+		
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri May 10 17:25:44 2024]
+[Fri May 10 17:25:44 2024]
+Error in rule alignFASTQs:
+    jobid: 20
+    input: /home/tmathieu/RNAseqAnalysis/input/Ath_genome.1.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.2.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.3.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.4.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.5.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.6.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.7.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.8.ht2, /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_R1_R1.fq, /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_R1_R2.fq
+    output: /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_CL_R1.sam
+    shell:
+        
+			mkdir -p /data/data2/homes/tmathieu/RNAseqAnalysis/sam
+
+			hisat2 				-q 				--dta 				--no-unal 				-p 20 				--summary-file /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_CL_R1.summary.txt 				-x /home/tmathieu/RNAseqAnalysis/input/Ath_genome 				-1 /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_R1_R1.fq 				-2 /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_R1_R2.fq 				-S /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_CL_R1.sam
+		
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error in rule alignFASTQs:
+    jobid: 44
+    input: /home/tmathieu/RNAseqAnalysis/input/Ath_genome.1.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.2.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.3.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.4.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.5.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.6.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.7.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.8.ht2, /home/tmathieu/RNAseqAnalysis/fastq/Col0_LSW_R1_R1.fq, /home/tmathieu/RNAseqAnalysis/fastq/Col0_LSW_R1_R2.fq
+    output: /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_LSW_R1.sam
+    shell:
+        
+			mkdir -p /data/data2/homes/tmathieu/RNAseqAnalysis/sam
+
+			hisat2 				-q 				--dta 				--no-unal 				-p 20 				--summary-file /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_LSW_R1.summary.txt 				-x /home/tmathieu/RNAseqAnalysis/input/Ath_genome 				-1 /home/tmathieu/RNAseqAnalysis/fastq/Col0_LSW_R1_R1.fq 				-2 /home/tmathieu/RNAseqAnalysis/fastq/Col0_LSW_R1_R2.fq 				-S /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_LSW_R1.sam
+		
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri May 10 17:25:44 2024]
+Error in rule alignFASTQs:
+    jobid: 7
+    input: /home/tmathieu/RNAseqAnalysis/input/Ath_genome.1.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.2.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.3.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.4.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.5.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.6.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.7.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.8.ht2, /home/tmathieu/RNAseqAnalysis/fastq/Col0_AWF_NT_R4_R1.fq, /home/tmathieu/RNAseqAnalysis/fastq/Col0_AWF_NT_R4_R2.fq
+    output: /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_AWF_NT_R4.sam
+    shell:
+        
+			mkdir -p /data/data2/homes/tmathieu/RNAseqAnalysis/sam
+
+			hisat2 				-q 				--dta 				--no-unal 				-p 20 				--summary-file /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_AWF_NT_R4.summary.txt 				-x /home/tmathieu/RNAseqAnalysis/input/Ath_genome 				-1 /home/tmathieu/RNAseqAnalysis/fastq/Col0_AWF_NT_R4_R1.fq 				-2 /home/tmathieu/RNAseqAnalysis/fastq/Col0_AWF_NT_R4_R2.fq 				-S /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_AWF_NT_R4.sam
+		
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri May 10 17:25:44 2024]
+[Fri May 10 17:25:44 2024]
+[Fri May 10 17:25:44 2024]
+Error in rule alignFASTQs:
+    jobid: 24
+    input: /home/tmathieu/RNAseqAnalysis/input/Ath_genome.1.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.2.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.3.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.4.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.5.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.6.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.7.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.8.ht2, /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_R2_R1.fq, /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_R2_R2.fq
+    output: /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_CL_R2.sam
+    shell:
+        
+			mkdir -p /data/data2/homes/tmathieu/RNAseqAnalysis/sam
+
+			hisat2 				-q 				--dta 				--no-unal 				-p 20 				--summary-file /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_CL_R2.summary.txt 				-x /home/tmathieu/RNAseqAnalysis/input/Ath_genome 				-1 /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_R2_R1.fq 				-2 /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_R2_R2.fq 				-S /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_CL_R2.sam
+		
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error in rule alignFASTQs:
+    jobid: 32
+    input: /home/tmathieu/RNAseqAnalysis/input/Ath_genome.1.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.2.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.3.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.4.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.5.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.6.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.7.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.8.ht2, /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_ribo_R1_R1.fq, /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_ribo_R1_R2.fq
+    output: /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_CL_ribo_R1.sam
+    shell:
+        
+			mkdir -p /data/data2/homes/tmathieu/RNAseqAnalysis/sam
+
+			hisat2 				-q 				--dta 				--no-unal 				-p 20 				--summary-file /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_CL_ribo_R1.summary.txt 				-x /home/tmathieu/RNAseqAnalysis/input/Ath_genome 				-1 /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_ribo_R1_R1.fq 				-2 /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_ribo_R1_R2.fq 				-S /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_CL_ribo_R1.sam
+		
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error in rule alignFASTQs:
+    jobid: 28
+    input: /home/tmathieu/RNAseqAnalysis/input/Ath_genome.1.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.2.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.3.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.4.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.5.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.6.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.7.ht2, /home/tmathieu/RNAseqAnalysis/input/Ath_genome.8.ht2, /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_R3_R1.fq, /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_R3_R2.fq
+    output: /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_CL_R3.sam
+    shell:
+        
+			mkdir -p /data/data2/homes/tmathieu/RNAseqAnalysis/sam
+
+			hisat2 				-q 				--dta 				--no-unal 				-p 20 				--summary-file /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_CL_R3.summary.txt 				-x /home/tmathieu/RNAseqAnalysis/input/Ath_genome 				-1 /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_R3_R1.fq 				-2 /home/tmathieu/RNAseqAnalysis/fastq/Col0_CL_R3_R2.fq 				-S /data/data2/homes/tmathieu/RNAseqAnalysis/sam/Col0_CL_R3.sam
+		
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Complete log: .snakemake/log/2024-05-10T171006.433471.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

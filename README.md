@@ -1,7 +1,9 @@
 # RNAseqAnalysis
-RNAseq Analysis Pipeline
+## RNAseq Analysis Pipeline
 
-(Adapted from Patricia Baldrich's pipeline)
+Adapted from Patricia Baldrich's pipeline
+
+Script for prepDE.py3 was retrieved from https://ccb.jhu.edu/software/stringtie/dl/prepDE.py3 with only minor changes made
 
 ## 1. Clone this repository to your working space
 

@@ -4,9 +4,6 @@ from math import ceil
 from optparse import OptionParser
 from operator import itemgetter
 
-# Script retrieved from https://ccb.jhu.edu/software/stringtie/dl/prepDE.py3
-# Only minor changes made
-
 parser=OptionParser(description='Generates two CSV files containing the count matrices for genes and transcripts, using the coverage values found in the output of `stringtie -e`')
 parser.add_option('-i', '--input', '--in', default='.', help="a folder containing all sample sub-directories, or a text file with sample ID and path to its GTF file on each line [default: %default/]")
 parser.add_option('-g', default='gene_count_matrix.csv', help="where to output the gene count matrix [default: %default")
@@ -156,10 +153,10 @@ for s in samples:
             if is_transcript(v):
                 t_id=RE_TRANSCRIPT_ID.search(v[8]).group(1)
                 try:
-                  g_id=getGeneID(v[8], v[0], t_id)
+                    g_id=t_id.split('.')[0] ###getGeneID(v[8], v[0], t_id)
                 except:
-                  print("Problem parsing file %s at line:\n:%s\n" % (s[1], v))
-                  sys.exit(1)
+                    print("Problem parsing file %s at line:\n:%s\n" % (s[1], v))
+                    sys.exit(1)
                 geneIDs.setdefault(t_id, g_id)
                 if not RE_STRING.match(g_id):
                     badGenes.append([v[0],v[6], t_id, g_id, min(int(v[3]),int(v[4])), max(int(v[3]),int(v[4]))]) #chromosome, strand, cluster/transcript id, start, end
@@ -277,14 +274,24 @@ for q, s in enumerate(samples):
 
 ##        transcriptList.sort(key=lambda bla: bla[1]) #gene_id
     
+    print('AT1G01040.1')
+    print(geneIDs['AT1G01040.1'])
+
     for i,v in t_dict.items():
 ##        print i,v
-       try:
-          geneDict.setdefault(geneIDs[i],{}) #gene_id
-          geneDict[geneIDs[i]].setdefault(s[0],0)
-          geneDict[geneIDs[i]][s[0]]+=v[s[0]]
-       except KeyError:
-          print("Error: could not locate transcript %s entry for sample %s" % ( i, s[0] ))
+        '''if geneIDs[i] == 'AT1G01010':
+            print(i.split('.')[0])
+            print(geneIDs[i])
+            print(s[0])
+            print(s)
+            print(v)
+            print(v[s[0]])'''
+        try:
+            geneDict.setdefault(geneIDs[i],{}) #gene_id
+            geneDict[geneIDs[i]].setdefault(s[0],0)
+            geneDict[geneIDs[i]][s[0]]+=v[s[0]]
+        except KeyError:
+            print("Error: could not locate transcript %s entry for sample %s" % ( v, s[0] ))
           #raise
 
 geneDict = dict(sorted(geneDict.items()))
