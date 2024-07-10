@@ -1,2 +1,0 @@
-Col0_CL_ribo_R3 /data/data2/homes/tmathieu/RNAseqAnalysis/gtf/Col0_CL_ribo_R3/Col0_CL_ribo_R3_ST.gtf
-Col0_CL_ribo_R3_merged /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_CL_ribo_R3/Col0_CL_ribo_R3_ST_MERGE.gtf

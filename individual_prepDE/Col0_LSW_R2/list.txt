@@ -1,2 +1,0 @@
-Col0_LSW_R2 /data/data2/homes/tmathieu/RNAseqAnalysis/gtf/Col0_LSW_R2/Col0_LSW_R2_ST.gtf
-Col0_LSW_R2_merged /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_LSW_R2/Col0_LSW_R2_ST_MERGE.gtf

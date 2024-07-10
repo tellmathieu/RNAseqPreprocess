@@ -1,2 +1,0 @@
-Col0_AWF_NT_R6 /data/data2/homes/tmathieu/RNAseqAnalysis/gtf/Col0_AWF_NT_R6/Col0_AWF_NT_R6_ST.gtf
-Col0_AWF_NT_R6_merged /data/data2/homes/tmathieu/RNAseqAnalysis/gtfMerge/Col0_AWF_NT_R6/Col0_AWF_NT_R6_ST_MERGE.gtf
