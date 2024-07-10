@@ -28,15 +28,15 @@ mamba activate RNAseq
 
 ## 3. Give your fastq files a consistent naming convention.
 
-### `{sample_name}_R1.fastq` or `{sample_name}_R1.fq`
-### `{sample_name}_R2.fastq` or `{sample_name}_R2.fq`
+- `{sample_name}_R1.fastq` or `{sample_name}_R1.fq`
+- `{sample_name}_R2.fastq` or `{sample_name}_R2.fq`
 
 The `{sample_name}` is what you choose (don't put any spaces in this name). The files must have the suffixes, including the read number (1 or 2).
 
 An example of how my files were named is:
 
-## `Col0_AWF_NT_R4_R1.fastq`
-## `Col0_AWF_NT_R4_R2.fastq`
+- `Col0_AWF_NT_R4_R1.fastq`
+- `Col0_AWF_NT_R4_R2.fastq`
 
 ## 4. Create metadata file (csv)
 
