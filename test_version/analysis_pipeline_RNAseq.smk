@@ -8,47 +8,52 @@ import os, sys, glob, pandas
 fastqDirectory="/home/tmathieu/RNAseqAnalysis/fastq"
 genome="/home/tmathieu/RNAseqAnalysis/input/Ath_genome.fa"
 annotation="/home/tmathieu/RNAseqAnalysis/input/Ath_genes.gff"
-metadata="/home/tmathieu/RNAseqAnalysis/input/colData.csv"
-treatmentComparisons="/home/tmathieu/RNAseqAnalysis/input/treatVsControl.csv"
-alpha=0.05
 threads=20
-ctrl="Col0_CL"
 
 ###################### --- PIPELINE--- #######################
 ### --- Don't change unless you know what you're doing --- ###
 mainDirectory = os.getcwd()
 
-SAMPLES1, NUM1,  = glob_wildcards(os.path.join(fastqDirectory, '{sample}_R{num}.fastq'))
-SAMPLES2, NUM2 = glob_wildcards(os.path.join(fastqDirectory, '{sample}_R{num}.fq'))
-
-SAMPLES = SAMPLES1 + SAMPLES2
-SAMPLES = list(set(SAMPLES))
-print(SAMPLES)
+SAMPLES, NUM, = glob_wildcards(os.path.join(mainDirectory, 'fastq', '{sample}_R{num}.fq'))
 
 index = ''.join(genome.split("/")[-1].split(".")[:-1])
 genomePreDir = genome.split("/")
 genomeDir = '/'.join(genomePreDir[:len(genomePreDir)-1])
 print(genomeDir)
 
-treatVsCtrl = pandas.read_csv(treatmentComparisons, index_col=[0])
+mainDirectory = os.getcwd()
 
-COMPS = []
-for i in range(1,1+len(treatVsCtrl)):
-	COMPS.append(treatVsCtrl['treatment'][i] + "_vs_" + treatVsCtrl['control'][i])
+colData = []
 
-print(COMPS)
+SAMPLES = list(set(SAMPLES))
+
+print(SAMPLES)
+
+for sample in SAMPLES:
+	premerge = {"sample": sample, "condition": "premerge"}
+	merged_sample = sample + "_merged"
+	merged = {"sample": merged_sample, "condition": "merged"}
+	colData.append(premerge)
+	colData.append(merged)
+
+colDataDF = pandas.DataFrame(colData, columns=['sample','condition'])
+colDataDF.to_csv(os.path.join(mainDirectory, 'summaryResults', 'colData.csv'), index=False)
 
 rule all:
 	input: 
-		heatmap1 = os.path.join(mainDirectory, 'results', 'heatmap_expression.pdf'),
-		heatmap2 = os.path.join(mainDirectory, 'results', 'heatmap_DE.pdf'),
-		PCAplot = os.path.join(mainDirectory, 'results', 'PCAplot.png'),
-		upsetPlot = os.path.join(mainDirectory, 'results', 'upset_plot.pdf'),
-		normCounts = os.path.join(mainDirectory, 'results', 'normalized_counts.txt'),
-		normCountsSig = expand(os.path.join(mainDirectory, 'results', 'normalized_counts_significant_{alpha}.txt'),alpha = alpha),
-		compDeseq = expand(os.path.join(mainDirectory, 'results', 'DEseq2{comp}_res{alpha}.csv'), alpha = alpha, comp = COMPS),
-		compVolcanoPlot = expand(os.path.join(mainDirectory, 'results', '{comp}_volcano_plot.png'), comp = COMPS),
-		compResults = expand(os.path.join(mainDirectory, 'results', '{comp}_results.txt'), comp = COMPS)
+		geneCountCombined = os.path.join(mainDirectory, 'summaryResults', 'combined_transcript_count.csv'),
+		transcriptCountCombined = os.path.join(mainDirectory, 'summaryResults', 'combined_gene_count.csv')
+		
+
+
+#rule uncompressGZ:
+#	input:
+#		os.path.join(mainDirectory, 'fastq', '{compressedfiles}q.gz')
+#	output:
+#		os.path.join(mainDirectory, 'fastq', '{compressedfiles}q')
+#	shell: '''
+#			gunzip -k {input}
+#		'''
 
 rule convertFASTQtoFQ:
 	input:
@@ -223,40 +228,44 @@ rule prepDEmerged:
 				-s AT
 		'''
 
-rule DEseq2:
+rule prepDEpremerge:
 	input:
-		geneCountMerged = os.path.join(mainDirectory, 'summaryResults', 'merged_gene_count.csv'),
-		transcriptCountMerged = os.path.join(mainDirectory, 'summaryResults', 'merged_transcript_count.csv'),
-		sampleMetaData = metadata,
-		treatmentComparisons = treatmentComparisons
+		expand(os.path.join(mainDirectory, 'gtf', '{sample}', '{sample}_ST.gtf'), zip, sample = SAMPLES)
 	threads: threads
 	params:
-		rscript = os.path.join(mainDirectory, 'script', 'DEseq.R'),
-		alpha = alpha,
-		resultsPath = os.path.join(mainDirectory, 'results'),
-		ctrl = ctrl
+		gtfDir = os.path.join(mainDirectory, 'gtf'),
+		prepDE = os.path.join(mainDirectory, 'script', 'prepDE.py3')
 	output:
-		heatmap1 = os.path.join(mainDirectory, 'results', 'heatmap_expression.pdf'),
-		heatmap2 = os.path.join(mainDirectory, 'results', 'heatmap_DE.pdf'),
-		PCAplot = os.path.join(mainDirectory, 'results', 'PCAplot.png'),
-		upsetPlot = os.path.join(mainDirectory, 'results', 'upset_plot.pdf'),
-		normCounts = os.path.join(mainDirectory, 'results', 'normalized_counts.txt'),
-		normCountsSig = expand(os.path.join(mainDirectory, 'results', 'normalized_counts_significant_{alpha}.txt'),alpha = alpha),
-		compDeseq = expand(os.path.join(mainDirectory, 'results', 'DEseq2{comp}_res{alpha}.csv'), alpha = alpha, comp = COMPS),
-		compVolcanoPlot = expand(os.path.join(mainDirectory, 'results', '{comp}_volcano_plot.png'), comp = COMPS),
-		compResults = expand(os.path.join(mainDirectory, 'results', '{comp}_results.txt'), comp = COMPS)
+		geneCount = os.path.join(mainDirectory, 'summaryResults', 'premerge_gene_count.csv'),
+		transcriptCount = os.path.join(mainDirectory, 'summaryResults', 'premerge_transcript_count.csv')
 	shell: '''
-			mkdir -p {params.resultsPath}
-
-			Rscript {params.rscript} \
-			{input.geneCountMerged} \
-			{input.sampleMetaData} \
-			{params.alpha} \
-			{params.resultsPath} \
-			{input.treatmentComparisons} \
-			{params.ctrl}
+			python3 {params.prepDE} \
+				-i {params.gtfDir} \
+				-g {output.geneCount} \
+				-t {output.transcriptCount} \
+				-s AT
 		'''
 
+rule prepDECombineCSVs:
+	input:
+		geneCountPremerge = os.path.join(mainDirectory, 'summaryResults', 'premerge_gene_count.csv'),
+		transcriptCountPremerge = os.path.join(mainDirectory, 'summaryResults', 'premerge_transcript_count.csv'),
+		geneCountMerged = os.path.join(mainDirectory, 'summaryResults', 'merged_gene_count.csv'),
+		transcriptCountMerged = os.path.join(mainDirectory, 'summaryResults', 'merged_transcript_count.csv')
+	threads: threads
+	params:
+		combineCounts = os.path.join(mainDirectory, 'script', 'combiningMergePremergeCounts.py3')
+	output:
+		geneCountCombined = os.path.join(mainDirectory, 'summaryResults', 'combined_gene_count.csv'),
+		transcriptCountCombined = os.path.join(mainDirectory, 'summaryResults', 'combined_transcript_count.csv')
+	shell: '''
+			python3 {params.combineCounts} \
+				{input.geneCountPremerge} \
+				{input.geneCountMerged} \
+				{output.geneCountCombined}
 
-
-
+			python3 {params.combineCounts} \
+				{input.transcriptCountPremerge} \
+				{input.transcriptCountMerged} \
+				{output.transcriptCountCombined}
+		'''

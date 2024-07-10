@@ -1,0 +1,14 @@
+      gene_id transcript_id  ... gene_id_mergedCol0_LSW_R3 FPKM_mergedCol0_LSW_R3
+0         NaN   AT1G01010.1  ...                 AT1G01010                    0.0
+1         NaN   AT1G01020.1  ...                 AT1G01020                    0.0
+2         NaN   AT1G01020.2  ...                 AT1G01020                    0.0
+3         NaN   AT1G01030.1  ...                 AT1G01030                    0.0
+4         NaN   AT1G01040.1  ...                   MSTRG.1                    0.0
+...       ...           ...  ...                       ...                    ...
+41666     NaN   ATMG01370.1  ...                 ATMG01370                    0.0
+41667     NaN   ATMG01380.1  ...                 ATMG01380                    0.0
+41668     NaN   ATMG01390.1  ...                 ATMG01390                    0.0
+41669     NaN   ATMG01400.1  ...                 ATMG01400                    0.0
+41670     NaN   ATMG01410.1  ...                 ATMG01410                    0.0
+
+[41671 rows x 50 columns]
