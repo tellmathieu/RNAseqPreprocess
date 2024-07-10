@@ -32,11 +32,40 @@ print(genomeDir)
 
 treatVsCtrl = pandas.read_csv(treatmentComparisons, index_col=[0])
 
+print(treatVsCtrl)
+
 COMPS = []
 for i in range(1,1+len(treatVsCtrl)):
 	COMPS.append(treatVsCtrl['treatment'][i] + "_vs_" + treatVsCtrl['control'][i])
 
 print(COMPS)
+
+metadataDF = pandas.read_csv(metadata)
+
+DE = []
+for i in range(0,len(metadataDF)):
+	DE.append(metadataDF['DE'][i])
+
+print(DE)
+
+for i in range(1,1+len(treatVsCtrl)):
+	try:
+		if treatVsCtrl['treatment'][i] in DE:
+			continue
+		if treatVsCtrl['control'][i] in DE:
+			continue
+	except:
+		print("Error: Your treatments and/or controls in your treatmentComparisons csv \
+			file don't match the DE column in the metadata csv file.")
+		sys.exit(1)
+
+try:
+	if ctrl in DE:
+		print("ctrl variable matches an item in the DE column in the metadata csv file! Woohoo!")
+except:
+	print("Error: Your ctrl variable doesn't match an item in the DE column in the metadata csv file.")
+	sys.exit(1)
+
 
 rule all:
 	input: 
