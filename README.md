@@ -17,10 +17,10 @@ git clone https://github.com/tellmathieu/RNAseqAnalysis.git
 wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
 bash Miniforge3-$(uname)-$(uname -m).sh
 ```
-- b) Initialize mamba and set up an environment - this can take 5-10 minutes
+- b) Initialize mamba and set up an environment - this can take 5-10 minutes - hisat2 and stringtie need to be these specific versions for recreating our results from original pipeline
 ```
 source ~/.bashrc #or you can log out and then log back in
-mamba create -c conda-forge -c bioconda -y -n RNAseq snakemake hisat2=2.2.1 samtools stringtie=2.2.3 bioconductor-deseq2 bioconductor-edger
+mamba create -c conda-forge -c bioconda -y -n RNAseq snakemake hisat2=2.2.1 samtools stringtie=2.1.4 bioconductor-deseq2 bioconductor-edger
 mamba activate RNAseq
 ```
 
