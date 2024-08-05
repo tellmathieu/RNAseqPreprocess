@@ -30,43 +30,6 @@ genomePreDir = genome.split("/")
 genomeDir = '/'.join(genomePreDir[:len(genomePreDir)-1])
 print(genomeDir)
 
-treatVsCtrl = pandas.read_csv(treatmentComparisons, index_col=[0])
-
-print(treatVsCtrl)
-
-COMPS = []
-for i in range(1,1+len(treatVsCtrl)):
-	COMPS.append(treatVsCtrl['treatment'][i] + "_vs_" + treatVsCtrl['control'][i])
-
-print(COMPS)
-
-metadataDF = pandas.read_csv(metadata)
-
-DE = []
-for i in range(0,len(metadataDF)):
-	DE.append(metadataDF['DE'][i])
-
-print(DE)
-
-for i in range(1,1+len(treatVsCtrl)):
-	try:
-		if treatVsCtrl['treatment'][i] in DE:
-			continue
-		if treatVsCtrl['control'][i] in DE:
-			continue
-	except:
-		print("Error: Your treatments and/or controls in your treatmentComparisons csv \
-			file don't match the DE column in the metadata csv file.")
-		sys.exit(1)
-
-try:
-	if ctrl in DE:
-		print("ctrl variable matches an item in the DE column in the metadata csv file! Woohoo!")
-except:
-	print("Error: Your ctrl variable doesn't match an item in the DE column in the metadata csv file.")
-	sys.exit(1)
-
-
 rule all:
 	input: 
 		heatmap1 = os.path.join(mainDirectory, 'results', 'heatmap_expression.pdf'),
@@ -251,41 +214,3 @@ rule prepDEmerged:
 				-t {output.transcriptCount} \
 				-s AT
 		'''
-
-rule DEseq2:
-	input:
-		geneCountMerged = os.path.join(mainDirectory, 'summaryResults', 'merged_gene_count.csv'),
-		transcriptCountMerged = os.path.join(mainDirectory, 'summaryResults', 'merged_transcript_count.csv'),
-		sampleMetaData = metadata,
-		treatmentComparisons = treatmentComparisons
-	threads: threads
-	params:
-		rscript = os.path.join(mainDirectory, 'script', 'DEseq.R'),
-		alpha = alpha,
-		resultsPath = os.path.join(mainDirectory, 'results'),
-		ctrl = ctrl
-	output:
-		heatmap1 = os.path.join(mainDirectory, 'results', 'heatmap_expression.pdf'),
-		heatmap2 = os.path.join(mainDirectory, 'results', 'heatmap_DE.pdf'),
-		PCAplot = os.path.join(mainDirectory, 'results', 'PCAplot.png'),
-		upsetPlot = os.path.join(mainDirectory, 'results', 'upset_plot.pdf'),
-		normCounts = os.path.join(mainDirectory, 'results', 'normalized_counts.txt'),
-		normCountsSig = expand(os.path.join(mainDirectory, 'results', 'normalized_counts_significant_{alpha}.txt'),alpha = alpha),
-		compDeseq = expand(os.path.join(mainDirectory, 'results', 'DEseq2{comp}_res{alpha}.csv'), alpha = alpha, comp = COMPS),
-		compVolcanoPlot = expand(os.path.join(mainDirectory, 'results', '{comp}_volcano_plot.png'), comp = COMPS),
-		compResults = expand(os.path.join(mainDirectory, 'results', '{comp}_results.txt'), comp = COMPS)
-	shell: '''
-			mkdir -p {params.resultsPath}
-
-			Rscript {params.rscript} \
-			{input.geneCountMerged} \
-			{input.sampleMetaData} \
-			{params.alpha} \
-			{params.resultsPath} \
-			{input.treatmentComparisons} \
-			{params.ctrl}
-		'''
-
-
-
-
