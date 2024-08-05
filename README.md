@@ -10,11 +10,11 @@ This preprocess pipeline is specifically for paired end reads, so you must have 
 ## 1. Clone this repository to your working space
 
 ```
-git clone https://github.com/tellmathieu/RNAseqAnalysis.git
+git clone https://github.com/tellmathieu/RNAseqPreprocess.git
 ```
 
 ## 2. Set up an environment to run this pipeline
-- a) install mamba if you don't already have it - you'll have to go through the installation process
+- a) install mamba if you don't already have it - you'll have to go through the installation process or do a command like `module load mamba`
 ```
 wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
 bash Miniforge3-$(uname)-$(uname -m).sh
@@ -42,7 +42,7 @@ An example of how my files were named is:
 ## 4. Change filepaths to your filepaths in the analysis_pipeline_RNAseq.smk
 
 ```
-cd RNAseqAnalysis
+cd RNAseqPreprocess
 nano preprocess_RNAseq_DE.smk
 ```
 In the nano editor (or whatever your preferred editor is), change the following 8 variables:
@@ -73,3 +73,4 @@ The `-j 20` specification is how many threads I told the computer to allocate to
 ```
 snakemake --snakefile preprocess_RNAseq_DE.smk -j 20 -p
 ```
+
