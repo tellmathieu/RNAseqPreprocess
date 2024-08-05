@@ -55,6 +55,7 @@ In the nano editor (or whatever your preferred editor is), change the following 
 fastqDirectory="/home/RNAseqAnalysis/fastq"
 genome="/home/RNAseqAnalysis/input/Ath_genome.fa"
 annotation="/home/RNAseqAnalysis/input/Ath_genes.gff"
+threads=20
 ```
 Make sure you have read/write privileges in these files.
 
@@ -64,6 +65,7 @@ The `genome` variable is the filepath to the `.fasta` or `.fa` file you are usin
 
 The `annotation` variable is the filepath to the `.gff` file you are using to map the RNAseq data against. You usually get this from where you get the genome file from. 
 
+The `threads` variable is for the computer to know how many threads to allocate each step. More threads usually means its quicker, but computer systems have limits, so that's why I have you specify it.
 
 ## 7. Run the pipeline.
 

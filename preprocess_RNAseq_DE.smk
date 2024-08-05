@@ -8,11 +8,7 @@ import os, sys, glob, pandas
 fastqDirectory="/home/tmathieu/RNAseqAnalysis/fastq"
 genome="/home/tmathieu/RNAseqAnalysis/input/Ath_genome.fa"
 annotation="/home/tmathieu/RNAseqAnalysis/input/Ath_genes.gff"
-metadata="/home/tmathieu/RNAseqAnalysis/input/colData.csv"
-treatmentComparisons="/home/tmathieu/RNAseqAnalysis/input/treatVsControl.csv"
-alpha=0.05
 threads=20
-ctrl="Col0_CL"
 
 ###################### --- PIPELINE--- #######################
 ### --- Don't change unless you know what you're doing --- ###
@@ -32,15 +28,8 @@ print(genomeDir)
 
 rule all:
 	input: 
-		heatmap1 = os.path.join(mainDirectory, 'results', 'heatmap_expression.pdf'),
-		heatmap2 = os.path.join(mainDirectory, 'results', 'heatmap_DE.pdf'),
-		PCAplot = os.path.join(mainDirectory, 'results', 'PCAplot.png'),
-		upsetPlot = os.path.join(mainDirectory, 'results', 'upset_plot.pdf'),
-		normCounts = os.path.join(mainDirectory, 'results', 'normalized_counts.txt'),
-		normCountsSig = expand(os.path.join(mainDirectory, 'results', 'normalized_counts_significant_{alpha}.txt'),alpha = alpha),
-		compDeseq = expand(os.path.join(mainDirectory, 'results', 'DEseq2{comp}_res{alpha}.csv'), alpha = alpha, comp = COMPS),
-		compVolcanoPlot = expand(os.path.join(mainDirectory, 'results', '{comp}_volcano_plot.png'), comp = COMPS),
-		compResults = expand(os.path.join(mainDirectory, 'results', '{comp}_results.txt'), comp = COMPS)
+		geneCount = os.path.join(mainDirectory, 'summaryResults', 'merged_gene_count.csv'),
+		transcriptCount = os.path.join(mainDirectory, 'summaryResults', 'merged_transcript_count.csv')
 
 rule convertFASTQtoFQ:
 	input:
