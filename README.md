@@ -45,7 +45,7 @@ An example of how my files were named is:
 cd RNAseqPreprocess
 nano preprocess_RNAseq_DE.smk
 ```
-In the nano editor (or whatever your preferred editor is), change the following 8 variables:
+In the nano editor (or whatever your preferred editor is), change the following 4 variables:
 ```
 ############# --- INPUT VARIABLES --- #############
 ### --- Change file paths here to your data --- ###
